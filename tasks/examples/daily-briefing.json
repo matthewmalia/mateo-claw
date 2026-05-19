@@ -1,0 +1,11 @@
+{
+  "id": "daily-briefing",
+  "description": "Example: weekday morning personal briefing. Disabled by default. Copy to tasks/, fill in USER.md first, then set enabled: true (or fire manually with `npm run run-task -- daily-briefing`).",
+  "prompt": "It's morning. Generate a personal briefing for today.\n\nSteps:\n1. Read USER.md for personal context (current ventures, goals, working style).\n2. Skim wiki/index.md to recall what's been compiled.\n3. List recent run records by globbing runs/ for the last 3-5 days; skim any that look relevant for follow-ups.\n\nWrite a markdown briefing to `briefings/<today's date in YYYY-MM-DD>.md` covering:\n- Today's likely priorities, grounded in current ventures.\n- Any open follow-ups from recent run records.\n- One or two open questions worth thinking about today.\n\nKeep the briefing tight (under 300 words). Return a one-paragraph summary as your final response — that summary becomes part of the run record.",
+  "scheduleType": "cron",
+  "scheduleValue": "0 7 * * 1-5",
+  "enabled": false,
+  "nextRun": null,
+  "lastRun": null,
+  "allowedTools": ["Read", "Write", "Edit", "Glob"]
+}

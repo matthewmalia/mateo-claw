@@ -1,0 +1,30 @@
+{
+  "name": "personal-agent",
+  "version": "0.1.0",
+  "description": "Personal AI agent — Claude Agent SDK harness + LLM Wiki memory + minimal identity",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "run-task": "tsx src/run-task.ts",
+    "auth-check": "tsx scripts/auth-check.ts",
+    "agent-smoke": "tsx scripts/agent-smoke.ts",
+    "identity-check": "tsx scripts/identity-check.ts",
+    "policy-smoke": "tsx scripts/policy-smoke.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.126",
+    "cron-parser": "^5.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

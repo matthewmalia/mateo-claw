@@ -1,0 +1,11 @@
+{
+  "id": "example-ingest",
+  "description": "Example: ingest a source file from raw/ into the wiki. Disabled by default. Copy to tasks/, edit the prompt to point at a real file you've dropped in raw/, then fire manually with `npm run run-task -- example-ingest`.",
+  "prompt": "Read `raw/<your-source-file>` and ingest it into the wiki.\n\nSteps:\n1. Read the source file from raw/.\n2. Identify the entities, concepts, and any synthesis-worthy ideas it covers.\n3. Create or update the appropriate wiki page(s) under `wiki/<page-type>/<kebab-case-name>.md`. Page types: entities, concepts, syntheses, timelines.\n4. Update `wiki/index.md` to list any new page with a one-line summary.\n5. Append a one-line entry to `wiki/log.md` in the format `## [YYYY-MM-DD] ingest | <Title>`, plus a short summary.\n\nReturn a one-paragraph summary as your final response.",
+  "scheduleType": "once",
+  "scheduleValue": "2099-01-01T00:00:00.000Z",
+  "enabled": false,
+  "nextRun": null,
+  "lastRun": null,
+  "allowedTools": ["Read", "Write", "Edit", "Glob", "Grep"]
+}

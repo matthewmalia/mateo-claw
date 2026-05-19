@@ -1,0 +1,19 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+
+# Run records, source material, and briefings may contain personal context
+runs/
+raw/
+briefings/
+
+# No env files — auth comes from Claude Code session, not API keys
+.env
+.env.*
+
+# Claude Code per-developer permissions (project-shared settings.json would be tracked)
+.claude/settings.local.json
+
+# Rendered launchd plist (generated from the .template in deploy/ — per-user, not committed)
+deploy/*.plist
