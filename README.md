@@ -8,6 +8,40 @@ Three core capabilities, no more:
 2. **Memory** — an LLM Wiki ([Karpathy pattern](resources/karpathy-llm-wiki.md)) in markdown. Lives in `wiki/`, sourced from `raw/`, navigated via `wiki/index.md`.
 3. **Identity** — `USER.md` for personal context, `CLAUDE.md` for project schema and operating instructions. The SDK loads `CLAUDE.md` automatically via `settingSources: ['project']`.
 
+## What It Looks Like
+
+A scheduled task fires; the agent reads `USER.md`, navigates the wiki, and writes an artifact to disk. Here's the `daily-briefing` example from `tasks/examples/`, fired manually:
+
+```text
+$ npm run run-task -- daily-briefing
+[run-task] firing daily-briefing
+[agent] starting: daily-briefing (model=claude-haiku-4-5-20251001)
+[agent] completed: daily-briefing (14237ms)
+[run-task] done. status=success duration=14289ms
+```
+
+The agent writes `briefings/2026-05-26.md`:
+
+```markdown
+# Briefing — 2026-05-26
+
+## Priorities today
+- Personal Agent: ship the README polish PRs before renaming the repo.
+- Venture A: review the onboarding flow PR flagged for Tuesday.
+- Wiki ingest: two unread articles sitting in `raw/` from the weekend.
+
+## Follow-ups from recent runs
+- Friday's ingest noted a contradiction between
+  `wiki/concepts/agent-loop.md` and `wiki/syntheses/sdk-defaults.md`.
+  Worth a 10-min reconciliation.
+
+## Open questions
+- Is the launchd `ThrottleInterval` long enough for the Node-22 cold
+  starts you've been seeing on the LaunchAgent?
+```
+
+A run record lands in `runs/2026-05-26/daily-briefing-<timestamp>.json` alongside the briefing, capturing the agent's one-paragraph summary plus tool-call counts so future runs have context.
+
 For the original v1 spec and build narrative, see [`PRD.md`](PRD.md) and [`docs/IMPLEMENTATION_PLAN.md`](docs/IMPLEMENTATION_PLAN.md).
 
 ## Quick Start
