@@ -250,3 +250,7 @@ References:
 ## Credits / Origin
 
 Built by [@matthewmalia](https://github.com/matthewmalia) as v1 of a personal agent harness, then generalized into a template. [`PRD.md`](PRD.md) and [`docs/IMPLEMENTATION_PLAN.md`](docs/IMPLEMENTATION_PLAN.md) preserve the original build narrative — including the two reference-skeleton bugs found, the scheduler concurrency runaway, and the path-scoping policy migration — for anyone curious about how this got from zero to working.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
